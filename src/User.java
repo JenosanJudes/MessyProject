@@ -1,43 +1,20 @@
-public class User
-{
-    public int c_id;
-    public String c_nam;
-    public String address;
+package src;
 
-    public User(int i, String n){
-        c_id = i;
-        if(n.length() < 0 || n.length() > 100) // Testing length
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
+public class User {
+    // Indkapsling: Feltet er nu privat i stedet for public
+    private String name;
+
+    public User(String name) {
+        this.name = name;
     }
 
-    public void setC_nam(String n)
-    {
-        if(n.length() < 0)
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        c_nam = n;
+    // Getter metode til at tilgå navnet sikkert
+    public String getName() {
+        return name;
     }
 
-    public void setA(String a)
-    {
-        a = a;
-    }
-
-    public int geti(){ return c_id; }
-
-    public String getn(){ return c_nam; }
-
-    public String geta(){ return "STREETNAME"; }
-
-    @Override
-    public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.c_nam == c_nam;
-        }
-        return false;
+    // Setter metode til at ændre navnet kontrolleret
+    public void setName(String name) {
+        this.name = name;
     }
 }
